@@ -1,5 +1,6 @@
 <script type="text/discourse-plugin" version="0.8">
-    api.registerConnectorClass("below-site-header", "jssor-slidershow", {
+  // This is the plugin outlet, followed by a custom name for the component
+  api.registerConnectorClass("below-site-header", "custom-homepage", {
 
     // Setting up our component
     setupComponent(args, component) {
@@ -10,7 +11,9 @@
      var topMenuRoutes = 
         Discourse.SiteSettings.top_menu.split('|')
         .map(function(route) {return '/' + route});
-
+      
+     // The first page listed in the 'top_menu' setting is your homepage
+     // lets assign it to a variable
      var homeRoute = topMenuRoutes[0];
   
      // This calls our code whenever the page changes
@@ -20,12 +23,12 @@
         if (url === "/" || url === homeRoute ){ 
           // If it's the homepage add the 'custom-homepage' class to HTML tag
           // and set 'displayCustomHomepage' to true
-          document.querySelector("html").classList.add("jssor-slidershow"); 
+          document.querySelector("html").classList.add("custom-homepage"); 
           component.set("displayCustomHomepage", true); 
         } else {  
           // If we're not on the homepage remove the class
           // and set `displayCustomHomepage` to false
-          document.querySelector("html").classList.remove("jssor-slidershow"); 
+          document.querySelector("html").classList.remove("custom-homepage"); 
           component.set("displayCustomHomepage", false); 
         }
       });

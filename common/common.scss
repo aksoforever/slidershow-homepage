@@ -1,4 +1,7 @@
-/*jssor slider loading skin spin css*/
+		.jssor-slidershow{position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;}
+		.jssor-loading{position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);}
+		.jssor-loading img{margin-top:-19px;position:relative;top:50%;width:38px;height:38px;}
+        /*jssor slider loading skin spin css*/
         .jssorl-009-spin img {
             animation-name: jssorl-009-spin;
             animation-duration: 1.6s;
